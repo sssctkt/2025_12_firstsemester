@@ -1,26 +1,14 @@
 #include <iostream>
 using namespace std;
-//given the arithemetic sequence
-//2, 5, 8, 11, .....
-int function(int term);
-int function2(int term);
-int main(){
-    int answer;
-    answer=function2(2);
-    cout<<answer;
-    return 0;
-}
 
-int function(int term){
-    int answer;
-    answer=2+3*(term-1);
-    return answer;
-}
-int function2(int term){
-    if (term==1){
-        return 2;
-    }
-    else{
-        return function2(term-1)+3;
-    }
+int main(){
+    //what is recursive function
+    //you are calling its own function
+    //purpose--you have another angle to solve the problem
+    //it could be slower than the regular method
+    
+    //you keep coming back to the same problem, but easier to sovle each time
+    
+    
+    return 0;
 }
