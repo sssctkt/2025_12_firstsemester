@@ -1,19 +1,20 @@
 #include <iostream>
 using namespace std;
-void print_ascending(int number);
+void print_descending(int number);
 
 int main() {
     int number=5;
-    print_ascending(number);
+    print_descending(number);
     return 0;
 }
 
-void print_ascending(int number){
+void print_descending(int number){
     if (number==1){
         cout<<number<<endl;
     }
     else{
-        print_ascending(number-1);
         cout<<number<<endl;
+        print_descending(number-1);
+        
     }
 }
