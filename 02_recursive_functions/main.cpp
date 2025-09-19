@@ -1,14 +1,28 @@
 #include <iostream>
 using namespace std;
-
+int factorial_nonrecursive(int term);
+int factorial_recursive(int term);
 int main(){
-    //what is recursive function
-    //you are calling its own function
-    //purpose--you have another angle to solve the problem
-    //it could be slower than the regular method
-    
-    //you keep coming back to the same problem, but easier to sovle each time
-    
-    
+    int answer;
+    answer=factorial_recursive(6);
+    cout<<answer;
     return 0;
+}
+int factorial_nonrecursive(int term){
+    int result=1;
+    for (int z=1; z<=term; z++)
+    {
+        result*=z;
+    }
+    
+    return result;
+}
+int factorial_recursive(int term){
+    //exit clause
+    if (term==1){
+        return 1;
+    }
+    else{
+        return term*factorial_recursive(term-1);
+    }
 }
