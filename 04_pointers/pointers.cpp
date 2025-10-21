@@ -3,14 +3,16 @@
 using namespace std;
 int main()
 {
-    int x=3;
-    int *b;
+    int x=3, y=62;
+    int *b, *c=&y;
+
     b=&x;
-    cout<<b<<endl; //address of x 
-    cout<<&x<<endl; //address of x 
-    cout<<x<<endl; //3 
-    cout<<*b<<endl; //dereferencing-->the value of the address the pointer is holding 
-    cout<<*&x<<endl; //3
+    *b=*c;
+    *c=100;
+    cout<<*b<<endl;
+    cout<<*c<<endl;
+    cout<<x<<endl;
+    cout<<y<<endl;
    
 
     return 0;
