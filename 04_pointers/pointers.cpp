@@ -7,7 +7,7 @@ int main()
     int *b, *c=&y;
 
     b=&x;
-    *b=*c;
+    b=c;
     *c=100;
     cout<<*b<<endl;
     cout<<*c<<endl;
