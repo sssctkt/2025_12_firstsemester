@@ -11,18 +11,19 @@ struct student{
     string firstname;
     int student_number;
 
+
 };
 int main()
 {
-    student s1;
-    s1.firstname="CT";
-    s1.student_number=9931;
-    s1.grade=80;
-    strcpy(s1.lastname,"Kwan");
+    student s1[11];
+    s1[0].firstname="CT";
+    s1[0].student_number=9931;
+    s1[0].grade=80;
+    strcpy(s1[0].lastname,"Kwan");
     
     
-    cout<<s1.firstname<<" "<<s1.student_number<<endl;
-    cout<<s1.lastname;
+    cout<<s1[0].firstname<<" "<<s1[0].student_number<<endl;
+    cout<<s1[0].lastname;
     
     return 0;
 }
