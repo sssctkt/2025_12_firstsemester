@@ -17,6 +17,12 @@ int main()
     cout<<" is the bigger one"<<endl;
     answer=f3+(f4);
     cout<<"The sum is: ";
+    
+    answer.getvalue();
+    cout<<endl;
+    answer=f3-(f4);
+    cout<<"The difference is: ";
+    
     answer.getvalue();
     return 0;
 }
