@@ -7,6 +7,7 @@ void fraction::setvalue(int n, int d){
     den=d;
 }
 void fraction::getvalue(){
+    simplify();
     cout<<num<<"/"<<den;
 }
 bool fraction::bigger(fraction f){
@@ -22,11 +23,37 @@ fraction fraction::displaybigger(fraction f){
     }
     return *this; //*this means the object that calls the function
 }
-fraction fraction::additon(fraction f)
+fraction fraction::addition(fraction f)
 {
     fraction x;
     x.num=(f.num*(*this).den)+((*this).num*f.den);
     x.den=(den*f.den);
     return x;
     
+}
+fraction fraction::operator+(fraction f){
+    fraction x;
+    x.num=(f.num*(*this).den)+((*this).num*f.den);
+    x.den=(den*f.den);
+    return x;
+}
+void fraction::simplify(){
+    int answer, divider;
+    if (abs(num)<abs(den)){
+        answer=abs(num);
+    }
+    else{
+        answer=abs(den);
+    }
+    for (divider=answer; divider>=1; divider--){
+        if ((num%divider==0) && (den%divider==0))break;
+    }
+    num=num/divider;
+    den=den/divider;
+}
+fraction fraction::operator-(fraction f){
+    fraction x;
+    x.num=((*this).num*f.den)-(f.num*(*this).den);
+    x.den=(den*f.den);
+    return x;
 }
