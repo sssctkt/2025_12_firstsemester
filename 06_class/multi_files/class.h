@@ -5,10 +5,13 @@ class fraction { //everything is assumed to be private
    private:
     int num;
     int den;
+    void simplify();
    public:
     void setvalue(int n, int d); //class member function, it can access the data even in private
     void getvalue();
     bool bigger(fraction f); //this fraction f is not the one that calls the function, it's like a regular variable
     fraction displaybigger(fraction f);
-    fraction additon(fraction f);
+    fraction addition(fraction f);
+    fraction operator+(fraction f);
+    fraction operator-(fraction f);
 };
