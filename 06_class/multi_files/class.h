@@ -6,7 +6,21 @@ class fraction { //everything is assumed to be private
     int num;
     int den;
     void simplify();
+    
    public:
+    //what is a constructor, a constructor is to create an object 
+    //luckily, they give it to you if you don't have ONE
+    //constructor (always have 2 constructors--one default, one custom)
+    //you need to manually make them
+    fraction();
+    fraction(int n, int d);
+    //destructor
+    ~fraction(); //delete the object when it is done
+    
+    
+    
+    //class-member function
+    //the object to call the function
     void setvalue(int n, int d); //class member function, it can access the data even in private
     void getvalue();
     bool bigger(fraction f); //this fraction f is not the one that calls the function, it's like a regular variable
@@ -14,4 +28,8 @@ class fraction { //everything is assumed to be private
     fraction addition(fraction f);
     fraction operator+(fraction f);
     fraction operator-(fraction f);
+    fraction operator+(int y);
+    
+    //friend
+    friend fraction operator+(int y, fraction f);
 };
