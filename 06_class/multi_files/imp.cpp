@@ -1,6 +1,19 @@
 #include "class.h"
 #include <iostream>
 using namespace std;
+//constructor
+fraction::fraction(){
+    
+}
+fraction::fraction(int n, int d){
+    num=n;
+    den=d;
+}
+fraction::~fraction(){
+    
+}
+
+//class-member function
 void fraction::setvalue(int n, int d){
     //the object that calls the function, its value CAN be changed
     num=n;
@@ -37,6 +50,22 @@ fraction fraction::operator+(fraction f){
     x.den=(den*f.den);
     return x;
 }
+
+fraction fraction::operator+(int y){
+    fraction x;
+    x.num=(y*(*this).den)+((*this).num);
+    x.den=(den);
+    return x;
+}
+
+//friend
+fraction operator+(int y, fraction f){
+    fraction x;
+    x.num=(y*(f).den)+((f).num);
+    x.den=(f.den);
+    return x;
+}
+
 void fraction::simplify(){
     int answer, divider;
     if (abs(num)<abs(den)){
