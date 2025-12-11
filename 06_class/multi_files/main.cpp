@@ -18,7 +18,7 @@ int main()
     cout<<endl;
     //to make it work
     f3.setvalue(2,5); //object f3 that calls the function
-    f4.setvalue(4,5);
+    cin>>f4;
     answer=f3.displaybigger(f4);
     answer.getvalue();
     cout<<" is the bigger one"<<endl;
@@ -40,6 +40,11 @@ int main()
     answer=x+f5;
     cout<<"The sum is: ";
     answer.getvalue();
+    cout<<endl;
+    
+    answer=addition(x,f5);
+    cout<<"The sum is: ";
+    cout<<answer;
     cout<<endl;
     return 0;
 }
