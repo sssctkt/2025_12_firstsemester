@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 //structure everything is assumed to be public
 class fraction { //everything is assumed to be private
 //private, means you cannot access it in main 
@@ -32,4 +34,8 @@ class fraction { //everything is assumed to be private
     
     //friend
     friend fraction operator+(int y, fraction f);
+    friend fraction addition(int y, fraction f);
+    friend ostream& operator<<(ostream &os, fraction &f);
+    friend istream& operator>>(istream &os, fraction &f);
+    
 };
