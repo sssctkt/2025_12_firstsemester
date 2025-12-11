@@ -3,7 +3,8 @@
 using namespace std;
 //constructor
 fraction::fraction(){
-    
+    num=0;
+    den=1;
 }
 fraction::fraction(int n, int d){
     num=n;
@@ -58,16 +59,14 @@ fraction fraction::operator+(int y){
     return x;
 }
 
-//friend
-fraction operator+(int y, fraction f){
-    fraction x;
-    x.num=(y*(f).den)+((f).num);
-    x.den=(f.den);
-    return x;
-}
+
 
 void fraction::simplify(){
     int answer, divider;
+    if (num==0){
+        den=1;
+        return ;
+    }
     if (abs(num)<abs(den)){
         answer=abs(num);
     }
@@ -85,4 +84,32 @@ fraction fraction::operator-(fraction f){
     x.num=((*this).num*f.den)-(f.num*(*this).den);
     x.den=(den*f.den);
     return x;
+}
+
+//friend
+fraction operator+(int y, fraction f){
+    fraction x;
+    x.num=(y*(f).den)+((f).num);
+    x.den=(f.den);
+    return x;
+}
+
+fraction addition(int y, fraction f){
+    fraction x;
+    x.num=(y*(f).den)+((f).num);
+    x.den=(f.den);
+    return x;
+}
+
+ostream& operator<<(ostream &os, fraction &f){
+    f.simplify();
+    os<<f.num<<"/"<<f.den;
+    return os;
+}
+istream& operator>>(istream &os, fraction &f){
+    cout<<"Enter the numerator: ";
+    os>>f.num;
+    cout<<"Enter the denminator: ";
+    os>>f.den;
+    return os;
 }
