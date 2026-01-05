@@ -12,8 +12,13 @@ int main()
     ifstream fin;  //similiar to cin 
     fin.open("input.txt"); //how you open a file
     string line;
-    getline(fin, line);
-    cout<<line;
+    int answer=0, item;
+    while(true){
+    fin>>item;
+    answer+=item;
+    if (fin.eof()) break;
+    }
+    cout<<answer;
     fin.close();
     return 0;
 }
